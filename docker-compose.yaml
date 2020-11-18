@@ -1,0 +1,18 @@
+version: '3'
+
+services:  
+  ## Start the smartcow test flask api < Exposes port 5000 >
+    api:
+      build: ./api
+      working_dir: /usr/smartcow/app
+      restart: on-failure
+      ports:
+        - '5000:5000'
+    
+  ## Start the smartcow test app frontend 
+    frontend:
+      build: ./sys-stats
+      working_dir: /usr/smartcow/app
+      restart: on-failure
+      ports:
+        - '8080:80'

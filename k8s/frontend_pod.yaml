@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: frontend
+  labels:
+    name: smartcow-frontend
+spec:
+  containers:
+  - name: frontend
+    image: rijulrg/smartcow:frontend
+    ports:
+    - containerPort: 80
